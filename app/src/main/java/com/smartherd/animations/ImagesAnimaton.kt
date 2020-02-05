@@ -3,6 +3,7 @@ package com.smartherd.animations
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_images_animaton.*
 
 class ImagesAnimaton : AppCompatActivity() {
@@ -11,9 +12,14 @@ class ImagesAnimaton : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_images_animaton)
 
-        val backgroundImage = animation_image.background as AnimationDrawable
-        backgroundImage.setEnterFadeDuration(200)
-        backgroundImage.setExitFadeDuration(1000)
+
+        applyAnimation(animation_image)
+        applyAnimation(overlay_gradient)
+    }
+    fun applyAnimation(view:View){
+        val backgroundImage = view.background as AnimationDrawable
+        backgroundImage.setEnterFadeDuration(2000)
+        backgroundImage.setExitFadeDuration(2000)
         backgroundImage.start()
     }
 }
